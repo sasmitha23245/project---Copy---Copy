@@ -1,0 +1,268 @@
+/* ================= Sidebar Container ================= */
+.sidebar {
+  background-color: #2f2f36;
+  width: 250px;
+  height: 100vh;
+  padding: 20px 15px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: fixed;
+  border-right: 1px solid rgba(255, 215, 0, 0.2);
+  margin-top: 50px; /* adjust if navbar/header exists */
+  overflow-y: auto; /* enable scrolling if menu grows */
+}
+
+/* ================= Profile Section ================= */
+.profile-section {
+  text-align: center;
+  margin-bottom: 30px;
+  position: relative;
+  width: 100%;
+}
+
+.profile-icon,
+.profile-icon-img {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  border: 2px solid greenyellow;
+  padding: 5px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  object-fit: cover;
+}
+
+.profile-icon {
+  font-size: 60px;
+  color: white;
+}
+
+.profile-icon:hover,
+.profile-icon-img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 15px rgba(255, 215, 0, 0.5);
+}
+
+/* Profile Dropdown Menu */
+.profile-menu {
+  position: absolute;
+  top: 75px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #2f2f36;
+  border: 1px solid greenyellow;
+  border-radius: 6px;
+  padding: 5px 0;
+  z-index: 100;
+  display: flex;
+  flex-direction: column;
+  min-width: 160px;
+  box-shadow: 0 2px 15px rgba(0, 0, 0, 0.5);
+}
+
+.profile-menu button {
+  background: none;
+  border: none;
+  padding: 10px 20px;
+  color: white;
+  text-align: left;
+  width: 100%;
+  font-size: 14px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.profile-menu button:hover {
+  background-color: rgba(255, 215, 0, 0.15);
+}
+
+.profile-menu button:not(:last-child) {
+  border-bottom: 1px solid rgba(255, 215, 0, 0.3);
+}
+
+/* ================= Welcome & Status ================= */
+.welcome-text .welcome {
+  color: gold;
+  font-family: cursive;
+  font-size: 20px;
+  margin: 10px 0 0;
+  letter-spacing: 1px;
+}
+
+.username {
+  color: white;
+  font-size: 16px;
+  margin: 5px 0;
+  font-weight: 500;
+}
+
+.status {
+  font-size: 14px;
+  color: #bbb;
+  margin-top: 5px;
+}
+
+.online {
+  color: #5cf174;
+  font-weight: bold;
+}
+
+/* ================= Navigation ================= */
+.nav-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  width: 100%;
+}
+
+.nav-btn {
+  background-color: rgba(255, 255, 255, 0.08);
+  border: 1px solid transparent;
+  border-radius: 20px;
+  padding: 12px 20px;
+  text-align: left;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: white;
+  font-size: 15px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  width: 100%;
+}
+
+.nav-btn:hover {
+  background-color: rgba(255, 215, 0, 0.2);
+  border-color: gold;
+  transform: translateX(5px);
+}
+
+.nav-btn.active {
+  background-color: rgba(255, 215, 0, 0.3);
+  border: 1px solid gold;
+  box-shadow: 0 0 10px rgba(255, 215, 0, 0.4);
+  transform: translateX(5px);
+}
+
+.nav-btn svg {
+  font-size: 18px;
+  color: gold;
+}
+
+/* ================= Dropdown ================= */
+.nav-dropdown {
+  position: relative;
+  width: 100%;
+}
+
+.dropdown-toggle {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.dropdown-toggle::after {
+  content: '▼';
+  font-size: 12px;
+  color: gold;
+  transition: transform 0.3s ease;
+  margin-left: auto;
+}
+
+.dropdown-toggle.active::after {
+  transform: rotate(180deg);
+}
+
+.dropdown-menu {
+  margin-top: 5px;
+  margin-left: 48px; /* align with text */
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 10px 0;
+  border-left: 2px solid rgba(255, 215, 0, 0.3);
+}
+
+.dropdown-item {
+  padding: 8px 15px;
+  color: white;
+  text-decoration: none;
+  border-radius: 15px;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 14px;
+}
+
+.dropdown-item:hover {
+  background-color: rgba(255, 215, 0, 0.2);
+  transform: translateX(5px);
+}
+
+.dropdown-item.active {
+  background-color: rgba(255, 215, 0, 0.3);
+  box-shadow: 0 0 10px rgba(255, 215, 0, 0.3);
+}
+
+.dropdown-item svg {
+  font-size: 14px;
+  color: gold;
+}
+
+/* ================= Responsive ================= */
+@media (max-width: 768px) {
+  .sidebar {
+    width: 70px;
+    padding: 15px 5px;
+    align-items: center;
+  }
+
+  .welcome-text, 
+  .username, 
+  .status, 
+  .nav-btn span {
+    display: none;
+  }
+
+  .profile-icon, .profile-icon-img {
+    width: 50px;
+    height: 50px;
+    font-size: 50px;
+  }
+
+  .nav-buttons {
+    align-items: center;
+    gap: 25px;
+  }
+
+  .nav-btn {
+    width: 50px;
+    height: 50px;
+    padding: 0;
+    justify-content: center;
+    border-radius: 50%;
+  }
+
+  .nav-btn:hover, 
+  .nav-btn.active {
+    transform: none;
+  }
+
+  /* Mobile dropdown menu floats outside */
+  .dropdown-menu {
+    position: absolute;
+    left: 65px;
+    top: 0;
+    background-color: #2f2f36;
+    border: 1px solid gold;
+    border-radius: 10px;
+    padding: 10px;
+    min-width: 160px;
+    z-index: 100;
+    border-left: none;
+    margin-left: 0;
+  }
+}
