@@ -10,10 +10,7 @@ function Customers() {
       <Header />
       <div className="dashboard-layout">
         <Sidebar />
-        <div className="dashboard-content">
-          <h1>Customers</h1>
-          <p>Manage your customers here.</p>
-        </div>
+        
       </div>
       <Footer />
     </div>

@@ -10,10 +10,7 @@ function Suppliers() {
       <Header />
       <div className="dashboard-layout">
         <Sidebar />
-        <div className="dashboard-content">
-          <h1>Suppliers</h1>
-          <p>Manage your suppliers here.</p>
-        </div>
+        
       </div>
       <Footer />
     </div>

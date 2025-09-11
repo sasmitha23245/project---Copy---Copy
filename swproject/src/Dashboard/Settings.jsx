@@ -13,13 +13,7 @@ function Settings() {
             <div className="dashboard-layout">
                 <Sidebar />
 
-                <div className="dashboard-content">
-                    <h1>Settings</h1>
-                    
-                    <div className="dashboard-card">
-                        <p>This is your settings panel. Configure your application preferences here.</p>
-                    </div>
-                </div>
+               
             </div>
 
             <Footer />

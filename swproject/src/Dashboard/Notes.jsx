@@ -13,13 +13,7 @@ function Notes() {
             <div className="dashboard-layout">
                 <Sidebar />
 
-                <div className="dashboard-content">
-                    <h1>Notes</h1>
-                    
-                    <div className="dashboard-card">
-                        <p>This is your notes section. Create and organize your notes here.</p>
-                    </div>
-                </div>
+                
             </div>
 
             <Footer />
