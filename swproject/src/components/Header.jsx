@@ -8,7 +8,6 @@ function Header() {
   const navigate = useNavigate(); // ← Hook to redirect
 
   const handleLogout = () => {
-    // Clear localStorage or session
     localStorage.clear(); // Or specific keys like localStorage.removeItem("token");
     
     // Redirect to login
